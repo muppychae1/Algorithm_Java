@@ -1,2 +1,2 @@
 # Algorithm_Java
-👩‍💻Baekjoon Study🦄
+👩‍💻Coding Study🦄
