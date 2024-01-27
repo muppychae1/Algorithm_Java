@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -11,9 +9,15 @@ public class Main {
         StringTokenizer st = new StringTokenizer(str, " ");
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
+        br.close();
 
-        if(a>b) System.out.println(">");
-        if(a<b) System.out.println("<");
-        if(a==b) System.out.println("==");
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        if(a>b) bw.write(">");
+        if(a<b) bw.write("<");
+        if(a==b) bw.write("==");
+
+        bw.flush();
+        bw.close();
     }
 }
