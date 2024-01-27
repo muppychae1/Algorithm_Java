@@ -9,14 +9,15 @@ public class Main {
 
         br.close();
 
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
+        sb.append(num1*(num2%10));
+        sb.append("\n");
+        sb.append(num1*((num2%100)/10));
+        sb.append("\n");
+        sb.append(num1*(num2/100));
+        sb.append("\n");
+        sb.append(num1*num2);
 
-        bw.write(num1*(num2%10) + "\n");
-        bw.write(num1*((num2%100)/10) + "\n");
-        bw.write(num1*(num2/100) + "\n");
-        bw.write(Integer.toString(num1*num2));
-
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
