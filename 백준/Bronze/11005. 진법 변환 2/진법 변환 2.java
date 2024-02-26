@@ -11,7 +11,7 @@ public class Main {
         int B = Integer.parseInt(st.nextToken()); // B진법
 
         String result = "";
-        while(true) {
+        while(N != 0) {
             int remain = N % B;
             if(remain >= 10) {
                 char c = (char)(remain + 55);
@@ -21,9 +21,6 @@ public class Main {
                 result += Integer.toString(remain);
             }
             N /= B;
-            if(N== 0) {
-                break;
-            }
         }
 
         for(int i=result.length()-1; i>=0; i--) {
