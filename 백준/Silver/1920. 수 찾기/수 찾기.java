@@ -22,7 +22,7 @@ public class Main {
         for(int i=0; i<M; i++) {
             int key = Integer.parseInt(st.nextToken());
 
-            if(hasNumber(arrN, key) >= 0) {
+            if(Arrays.binarySearch(arrN, key) >= 0) {
                 bw.write("1\n");
             }
             else {
@@ -33,32 +33,5 @@ public class Main {
         br.close();
         bw.flush();
         bw.close();
-    }
-
-    /**
-     * @param arrN 정렬된 배열
-     * @param key 찾으려는 값
-     * @return key와 일치하는 arrN의 index 값
-     *          불일치일 경우, -1 반환
-     */
-    public static int hasNumber(int [] arrN, int key) {
-        int low = 0;
-        int high = arrN.length -1;
-
-        while(low <= high) {
-            int mid = (low + high) / 2;
-
-            if(key < arrN[mid]) {
-                high = mid -1;
-            }
-            else if(key > arrN[mid]) {
-                low = mid + 1;
-            }
-            else if(key == arrN[mid]) {
-                return mid;
-            }
-        }
-
-        return -1;
     }
 }
